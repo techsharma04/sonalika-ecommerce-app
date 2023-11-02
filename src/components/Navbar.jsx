@@ -40,9 +40,6 @@ const Navbar = () => {
             <Link to="/login" className="btn mt-2">
               <i className="fa fa-user-circle-o"></i>
             </Link>
-            <Link to="/signup" className="btn mt-2  ">
-              <i className=" fa fa-user-plus "></i>{" "}
-            </Link>
             <Link to="/cart" className="btn mt-2  ">
               <i className="fa fa-shopping-cart "></i>({totalCartQty})
             </Link>

@@ -37,7 +37,7 @@ const SignUp = () => {
             alertClass: "alert alert-success",
           });
           alert("SignUp Successful");
-          navigate("/");
+          navigate("/login");
         },
         (error) => {
           setRequestResponse({
