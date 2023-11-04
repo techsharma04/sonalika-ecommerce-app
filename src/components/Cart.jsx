@@ -78,10 +78,9 @@ const Cart = () => {
             </div>
             <div className="button d-flex justify-content-center">
               <button
-                className="btn btn-outline-dark py-2"
+                className="btn btn-outline-dark py-2 mb-3"
                 style={{
-                  background:
-                    "linear-gradient(#997aa3, #8A8AFF, #C3C3FF, #5353FF)",
+                  background: "#427D9D",
                 }}
                 onClick={() => handleCheckout()}
               >
@@ -107,7 +106,7 @@ const Cart = () => {
 
 const cardStyles = {
   padding: "2rem",
-  background: "linear-gradient(#997aa3, #8A8AFF, #C3C3FF, #5353FF)",
+  background: "#427D9D",
 };
 
 export default Cart;

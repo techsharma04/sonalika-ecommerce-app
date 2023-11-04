@@ -20,7 +20,7 @@ const WishList = () => {
               className="card text-center"
               style={{
                 padding: "2rem",
-                background: "linear-gradient(#997aa3,#8A8AFF,#C3C3FF,#5353FF)",
+                background: "#427D9D",
               }}
             >
               <p>Your WishList is Empty!</p>

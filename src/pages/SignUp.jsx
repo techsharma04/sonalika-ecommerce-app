@@ -162,13 +162,13 @@ const SignUp = () => {
                 type="submit"
                 value="Register"
                 className="btn my-3 btn-block"style={{background:
-                  "linear-gradient(#C3C3FF,#5353FF)"}}
+                  "#427D9D"}}
                 disabled={!formik.isValid}
               />
             </form>
             <br />
             <p className="text-center">
-              Already Registered? <Link to="/login">Click Here</Link>
+              Already Registered? <Link to="/login">Login</Link>
             </p>
           </div>
         </div>

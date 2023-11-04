@@ -59,7 +59,7 @@ const Products = () => {
         <div
           className="container container-expand-lg my-2 shadow-sm "
           style={{
-            background: "linear-gradient(#997aa3,#2447BD,#C3C3FF,#1A338C)",
+            background: "#427D9D",
             width: "100%",
           }}
         >
@@ -97,14 +97,17 @@ const Products = () => {
 
         {filter.map((product) => (
           <div className="col-md-3 mb-4 py-5" key={product.id}>
-            <div className="card h-100 text-center p-2">
+            <div
+              className="card h-100 text-center p-2"
+              style={{ background: "#9BBEC8" }}
+            >
               <i
                 className="fa fa-heart"
                 aria-hidden="true"
                 style={{
                   position: "absolute",
                   top: "10px",
-                  left: "10px",
+                  right: "10px",
                   color: heartClicked[product.id] ? "red" : "black",
                   fontSize: "24px",
                   zIndex: "1",
@@ -136,8 +139,7 @@ const Products = () => {
                   to={`/products/${product.id}`}
                   className="btn"
                   style={{
-                    background:
-                      "linear-gradient(#997aa3,#8A8AFF,#C3C3FF,#5353FF)",
+                    background: "#427D9D",
                   }}
                 >
                   Show

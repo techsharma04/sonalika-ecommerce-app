@@ -99,7 +99,7 @@ const Login = () => {
               <input
                 type="submit"
                 value="Login"
-                className="btn btn-dark my-3  mx-auto" 
+                className="btn  my-3  mt-2 mx-auto" style={{background:"#427D9D"}} 
                 disabled={!formik.isValid}
               />
             </form>

@@ -11,13 +11,28 @@ const Navbar = () => {
   return (
     <nav
       className="navbar navbar-expand-lg navbar-info py-3 shadow-sm"
-      style={{ background: "linear-gradient(#997aa3,#2447BD,#C3C3FF,#1A338C)" }}
+      style={{ background: "#427D9D" }}
     >
       <div className="container  ">
-        <Link to="/" className="navbar-brand fw-bold fs-4 mt-2">
-          <span className="text-white shadow-sm">SA</span>
-          <span className="text-black shadow-sm">Global</span>
-          <span className="text-white shadow-sm">Mart</span>
+        <Link to="/" className="navbar-brand fw-bold fs-4 mt-2 shadow-sm">
+          <span
+            className="text-white "
+            style={{ fontSize: "28px", fontWeight: "bold" }}
+          >
+            SA
+          </span>
+          <span
+            className="text-black "
+            style={{ fontSize: "28px", fontWeight: "bold" }}
+          >
+            Global
+          </span>
+          <span
+            className="text-white "
+            style={{ fontSize: "28px", fontWeight: "bold" }}
+          >
+            Mart
+          </span>
         </Link>
 
         <div className="collapse navbar-collapse " id="navbarSupportedContent">
@@ -38,13 +53,13 @@ const Navbar = () => {
         <div className="button-navmb-2 mb-lg-0 ">
           <div className="buttons  mx-auto   ">
             <Link to="/login" className="btn mt-2">
-              <i className="fa fa-user-circle-o"></i>
+              <i className="fa fa-user-circle-o fa-2x"></i>
             </Link>
             <Link to="/cart" className="btn mt-2  ">
-              <i className="fa fa-shopping-cart "></i>({totalCartQty})
+              <i className="fa fa-shopping-cart fa-2x "></i>({totalCartQty})
             </Link>
-            <Link to="/wishlist" className="btn mt-2 ">
-              <i className="fa fa-heart "></i>({totalWishListQty})
+            <Link to="/wishlist" className="btn mt-2 ` ">
+              <i className="fa fa-heart fa-2x"></i>({totalWishListQty})
             </Link>
           </div>
         </div>

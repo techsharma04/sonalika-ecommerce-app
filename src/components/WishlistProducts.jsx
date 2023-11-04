@@ -43,7 +43,7 @@ function WishListProducts(props) {
             <button
               className="btn  px-2 py-2"
               style={{
-                background: "linear-gradient(#997aa3,#8A8AFF,#C3C3FF,#5353FF)",
+                background: "#427D9D",
               }}
               ref={cartBtnText}
               onClick={() => handleOnClick()}

@@ -7,10 +7,10 @@ const Home = () => {
     <div className="hero">
       <div className="card bg-dark text-white  border-0">
         <img
-          src={`${process.env.PUBLIC_URL}/assests/image1.jpg`}
+          src={`${process.env.PUBLIC_URL}/assests/shoppingcart-jpg.webp`}
           className="card-img"
           alt="Background"
-          height="500px"
+          
         />
         <div className="card-img-overlay  flex-column shadow-sm justify-content-center">
           <div className="container mb-auto">
