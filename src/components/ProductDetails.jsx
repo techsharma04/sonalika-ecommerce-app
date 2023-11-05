@@ -42,32 +42,22 @@ const ProductDetails = () => {
   const ShowProduct = () => {
     return (
       <>
-        <div className="col-md-6">
-          <img
-            src={product.image}
-            alt={product.title}
-            height="400px"
-            width="400px"
-          />
+        <div className="col-md-4" style={{ padding: "25px", height: "400px", background: "black", border: "5px groove #50616a", display: "flex" }}>
+          <img src={product.image} alt={product.title} width="100%" style={{ borderRadius: "5px" }} />
         </div>
-        <div className="col-md-6">
-          <h4 className="text-uppercase text-black-50">{product.category}</h4>
-          <h1 className="display-5">{product.title}</h1>
-          <h3 className="display-6 fw-bold my-4">$ {product.price}</h3>
-
-          <button
-            className="btn btn-outline-dark px-4 py-2"
-            style={{
-              background: "#427D9D",
-            }}
-            ref={cartBtnText}
-            onClick={() => addProduct(product)}
-          >
-            {existInCart ? "Remove from Cart" : "Add to Cart"}
-          </button>
-          <NavLink to="/cart" className="btn btn-dark ms-2 px-3 py-2">
-            Go to Cart
-          </NavLink>
+        <div className="col-md-6" style={{ display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+          <small className="text-uppercase">Category: {product.category}</small>
+          <h4 style={{fontWeight: "700"}}>{product.title}</h4>
+          <p>{product.description}</p>
+          <h3 className="display-6 fw-bold my-4">Price: $ {product.price}</h3>
+          <div>
+            <button className="btn btn-dark" style={{ width: "200px", float: "left" }} ref={cartBtnText} onClick={() => addProduct(product)} >
+              {existInCart ? "Remove from Cart" : "Add to Cart"}
+            </button>
+            <NavLink to="/cart">
+              <button className="btn btn-dark" style={{ width: "200px",  float: "right" }}>Go to Cart</button>
+            </NavLink>
+          </div>
         </div>
       </>
     );
@@ -75,8 +65,8 @@ const ProductDetails = () => {
 
   return (
     <div>
-      <div className="container py-5">
-        <div className="row py-4">
+      <div className="container py-5" style={{ marginTop: "200px"}}>
+        <div className="row py-4" style={{ border: "10px groove #50616a", padding: "25px", display: "flex", justifyContent: "space-around" }}>
           {loading ? <Loading /> : <ShowProduct />}
         </div>
       </div>

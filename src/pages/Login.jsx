@@ -49,8 +49,7 @@ const Login = () => {
 
   return (
 
-    <div className="container my-5" style={{background:
-      "#dee3ea"}}>
+    <div className="container" style={{marginTop: "150px", background: "#50616a", color: "white", padding: "50px" }}>
       <div className="row">
         <div className="col-md-3"></div>
         <div className="col-md-6">
@@ -105,7 +104,7 @@ const Login = () => {
             </form>
             <br />
             <p className="text-center ">
-              Don't have an account? <Link to="/signup">SignUp</Link>
+              Don't have an account? <Link to="/signup" style={{textDecoration: "underline", color: "white"}}>SignUp</Link>
             </p>
           </div>
         </div>

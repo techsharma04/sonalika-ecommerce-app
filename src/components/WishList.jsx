@@ -9,20 +9,8 @@ const WishList = () => {
     return (
       <>
         <div>
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              margin: "5rem 0rem 5rem",
-            }}
-          >
-            <div
-              className="card text-center"
-              style={{
-                padding: "2rem",
-                background: "#427D9D",
-              }}
-            >
+          <div style={{ display: "flex", justifyContent: "center", margin: "5rem 0rem 5rem"}} >
+            <div className="card text-center" style={{ padding: "2rem", background: "#50616a", color: "#fff"}} >
               <p>Your WishList is Empty!</p>
               <Link to={"/"}>
                 <button className="btn btn-dark btn-block">
@@ -54,7 +42,7 @@ const WishList = () => {
 
   return (
     <div>
-      <div className="container py-5">
+      <div className="container py-5" style={{marginTop: "150px"}}>
         <div className="row py-4">
           {wishlist.length ? <ShowWishList /> : <EmptyWishList />}
         </div>

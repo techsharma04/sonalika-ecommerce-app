@@ -5,7 +5,7 @@ import { removeFromWishlist } from "../redux/reducer/handleWishList";
 import { useRef } from "react";
 
 function WishListProducts(props) {
-  const { id, title, price, image } = props.data;
+  const { id, title, price, description, image } = props.data;
 
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart);
@@ -25,43 +25,27 @@ function WishListProducts(props) {
   };
 
   return (
-    <>
-      <div className="cart " style={{ background: "#dee3ea" }}>
+    <div className="container" style={{ width: "100%" }}>
+      <div className="wishlist-main" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "15px" }}>
         <div className="imageDiv">
-          <img src={image} alt={title} height="200px" width="200px" />
+          <img src={image} alt={title} height="300px" width="300px" style={{border: "5px groove black", padding: "25px"}}/>
         </div>
-        <div className="contentDiv" style={{ background: "#dee3ea" }}>
-          <div>
-            <h6>
-              <p className=" lead  fw-bold">{title}</p>
-            </h6>
+        <div className="wishlist-title">
+          <div className="title"  style={{width: "700px", display: "flex", flexDirection: "column",  }}>
+            <h3 style={{fontWeight: "700", color: "#427d9d"}}>{title.substring(0, 40)}...</h3>
+            <p style={{textAlign: "justify"}}>{description.substring(0, 300)}...</p>
+            <h4 className="display-6 fw-bold my-4">Price: ${price}</h4>
           </div>
-          <div>
-            <h4 className="display-6 fw-bold my-4">${price}</h4>
-          </div>
-          <div>
-            <button
-              className="btn  px-2 py-2"
-              style={{
-                background: "#427D9D",
-              }}
-              ref={cartBtnText}
-              onClick={() => handleOnClick()}
-            >
+        </div>
+        <div className="wishlist-button" style={{display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "space-evenly", height: "300px"}}>
+            <button className="btn btn-dark" style={{ background: "#427D9", width: "155px"}} ref={cartBtnText} onClick={() => handleOnClick()} >
               {existInCart ? "Remove from Cart" : "Add to Cart"}
             </button>
-
-            <AiFillDelete
-              onClick={handleRemove}
-              style={{ cursor: "pointer" }}
-              size={"1.8rem"}
-              color="#ff0000"
-            />
-            <hr />
+            <button className="btn btn-dark"><AiFillDelete onClick={handleRemove} style={{ cursor: "pointer" }} size={"1.8rem"} color="#ff0000" /></button>
           </div>
-        </div>
       </div>
-    </>
+      <hr />
+    </div>
   );
 }
 export default WishListProducts;

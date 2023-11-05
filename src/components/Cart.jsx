@@ -28,22 +28,23 @@ const Cart = () => {
   const EmptyCart = () => {
     return (
       <>
-        <div>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            margin: "5rem 0rem 5rem",
+          }}
+        >
           <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              margin: "5rem 0rem 5rem",
-            }}
+            className="card text-center"
+            style={{ padding: "2rem", background: "#50616a", color: "#fff" }}
           >
-            <div className="card text-center" style={cardStyles}>
-              <p>Your Cart is Empty!</p>
-              <Link to={"/"}>
-                <button className="btn btn-dark btn-block">
-                  Continue Shopping
-                </button>
-              </Link>
-            </div>
+            <p>Your Cart is Empty!</p>
+            <Link to={"/"}>
+              <button className="btn btn-dark btn-block">
+                Continue Shopping
+              </button>
+            </Link>
           </div>
         </div>
       </>
@@ -60,28 +61,35 @@ const Cart = () => {
             ))}
           </div>
 
-          <div className="card" style={{ background: "#dee3ea" }}>
-            <div className="text-center h2 ">Cart Summary</div>
-            <div className="row py-2">
-              <p className="col-lg-7 h6">Total</p>
-              <p className="col-lg-5">${totalAmount.toFixed(2)}</p>
+          <div
+            className="card"
+            style={{ background: "#dee3ea", padding: "25px", color: "black" }}
+          >
+            <div className="h2">
+              <legend>Cart Summary</legend>
             </div>
 
-            <div className="row">
-              <p className="col-lg-7 h6">Shipping Charges</p>
-              <p className="col-lg-5">${shippingCharges.toFixed(2)}</p>
-            </div>
-            <hr />
-            <div className="row">
-              <p className="col-lg-7 h4">Checkout Price</p>
-              <p className="col-lg-5 h3">${checkoutPrice.toFixed(2)}</p>
-            </div>
-            <div className="button d-flex justify-content-center">
+            <table class="table table-xxl table-dark table-borderless">
+              <tbody>
+                <tr>
+                  <th>Total</th>
+                  <td>${totalAmount.toFixed(2)}</td>
+                </tr>
+                <tr>
+                  <th>Shipping Charges</th>
+                  <td>${shippingCharges.toFixed(2)}</td>
+                </tr>
+                <tr>
+                  <th>Checkout Price</th>
+                  <td>${checkoutPrice.toFixed(2)}</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div>
               <button
-                className="btn btn-outline-dark py-2 mb-3"
-                style={{
-                  background: "#427D9D",
-                }}
+                className="btn btn-dark"
+                style={{ color: "white", padding: "10px 20px", width: "100%" }}
                 onClick={() => handleCheckout()}
               >
                 Proceed to Checkout
@@ -95,7 +103,7 @@ const Cart = () => {
 
   return (
     <div>
-      <div className="container width-50 py-4">
+      <div className="container width-50 py-4" style={{ marginTop: "100px" }}>
         <div className="row py-4">
           {cart.length ? <ShowCart /> : <EmptyCart />}
         </div>
@@ -104,9 +112,6 @@ const Cart = () => {
   );
 };
 
-const cardStyles = {
-  padding: "2rem",
-  background: "#427D9D",
-};
+
 
 export default Cart;

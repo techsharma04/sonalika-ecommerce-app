@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { addToWishlist } from "../redux/reducer/handleWishList";
 import { useDispatch } from "react-redux";
+import heart from "../images/heart.png"
 
 const Products = () => {
   const [data, setData] = useState([]);
@@ -56,106 +57,66 @@ const Products = () => {
   const ShowProducts = () => {
     return (
       <>
-        <div
-          className="container container-expand-lg my-2 shadow-sm "
-          style={{
-            background: "#427D9D",
-            width: "100%",
-          }}
-        >
-          {/* <div className="container bg-dark shadow-sm bg-body-tertiary p-0 m-0"  > */}
-          <div className="buttons d-flex justify-content-center text-white">
-            <button className="btn me-2" onClick={() => setFilter(data)}>
+        <div style={{ width: "100%" }}>
+          <div className="buttons d-flex justify-content-center text-white product_bar" style={{ marginTop: "120px" }}>
+            <button className="btn me-2" onClick={() => setFilter(data)} style={{ color: "white" }}>
               All
             </button>
-            <button
-              className="btn me-2"
-              onClick={() => filterProduct("electronics")}
-            >
+            <button className="btn me-2" onClick={() => filterProduct("electronics")} style={{ color: "white" }}>
               Electronics
             </button>
-            <button
-              className="btn me-2"
-              onClick={() => filterProduct("jewelery")}
-            >
+            <button className="btn me-2" onClick={() => filterProduct("jewelery")} style={{ color: "white" }}>
               Jewelery
             </button>
-            <button
-              className="btn me-2"
-              onClick={() => filterProduct("men's clothing")}
-            >
+            <button className="btn me-2" onClick={() => filterProduct("men's clothing")} style={{ color: "white" }}>
               Men's Clothing
             </button>
-            <button
-              className="btn me-2"
-              onClick={() => filterProduct("women's clothing")}
-            >
+            <button className="btn me-2" onClick={() => filterProduct("women's clothing")} style={{ color: "white" }}>
               Women's Clothing
             </button>
           </div>
         </div>
+        <div className="product-container">
+          {filter.map((product) => (
 
-        {filter.map((product) => (
-          <div className="col-md-3 mb-4 py-5" key={product.id}>
-            <div
-              className="card h-100 text-center p-2"
-              style={{ background: "#9BBEC8" }}
-            >
-              <i
-                className="fa fa-heart"
-                aria-hidden="true"
-                style={{
-                  position: "absolute",
-                  top: "10px",
-                  right: "10px",
-                  color: heartClicked[product.id] ? "red" : "black",
-                  fontSize: "24px",
-                  zIndex: "1",
-                }}
-                onClick={() => toggleHeartColor(product)}
-              ></i>
-              <img
-                src={product.image}
-                className="card-img-t mt-5 op"
-                alt={product.title}
-                height="250px"
-              />
-              <div className="card-body">
-                <h5 className="card-title  mb-0">
-                  brand, {product.title.substring(0, 12)}..
-                </h5>
-                <p className="lead fw-bolder">
+            <div className="product-card">
+              <div className="product-heart-stars">
+                <i className="fa fa-heart product-stars" aria-hidden="true" style={{ color: heartClicked[product.id] ? "red" : "white", }} onClick={() => toggleHeartColor(product)}></i>
+                <div>
                   {Array.from({ length: product.rating.rate }, (_, index) => (
-                    <i
-                      className="fa fa-star"
-                      style={{ color: "#FF0000" }}
-                      key={index}
-                    ></i>
+                    <i className="fa fa-star" style={{ color: "#FF0000" }} key={index} ></i>
                   ))}
                   {" (" + product.rating.count + ")"}
-                </p>
-                <p className="card-text">${product.price}</p>
-                <NavLink
-                  to={`/products/${product.id}`}
-                  className="btn"
-                  style={{
-                    background: "#427D9D",
-                  }}
-                >
-                  Show
+                </div>
+              </div>
+              <div className="product-image">
+                <img className="pro-image" src={product.image} alt={product.title} />
+              </div>
+              <div className="product-title">
+                <small>Brand {product.title.substring(0, 20)}..</small>
+              </div>
+              <div className="product-price">
+                <legend>Price: $ {product.price}</legend>
+              </div>
+              <div className="product-btn">
+                <NavLink to={`/products/${product.id}`}>
+                  <button className="btn btn-light" style={{width: "100%"}}>
+                    View Details
+                  </button>
                 </NavLink>
               </div>
             </div>
-          </div>
-        ))}
+
+          ))}
+        </div>
       </>
     );
   };
 
   return (
     <div>
-      <div className="container-fluid md-3 py-">
-        <div className="row justify-content-center">
+      <div className="container-fluid md-3 py-" style={{ margin: "0", padding: "0" }}>
+        <div className="product-main-container">
           {loading ? <Loading /> : <ShowProducts />}
         </div>
       </div>

@@ -6,7 +6,7 @@ function CartProducts(props) {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart);
 
-  const { id, title, price, image } = props.data;
+  const { id, title, price, category, description, image } = props.data;
   const product = cart.cartItems.filter((eachProduct) => eachProduct.id === id);
 
   const handleQtyDecrement = () => {
@@ -23,42 +23,27 @@ function CartProducts(props) {
 
   return (
     <>
-      <div
-        className="px-4 my-3 rounded-2 py-3"
-        style={{ background: "#dee3ea" }}
-      >
-        <div className="row ">
-          <div className="col-md-4" style={{ background: "#dee3ea" }}>
-            <img src={image} alt={title} height="200px" width="200px" />
-            <hr />
+      <div className="px-4 my-3 rounded-2 py-3" style={{ background: "#50616a", color: "white" }} >
+        <div style={{ display: "flex", padding: "25px" }}>
+          <div style={{ width: "50%", height: "450px", display: "flex", flexDirection: "column", justifyContent: "space-between", padding: "25px" }}>
+            <small>Category: <span className="text-uppercase">{category}</span></small>
+            <h1>{title}</h1>
+            <small style={{textAlign: "justify"}}>{description}</small>
+            <div className="quantity-container" style={{ width: "120px", display: "flex", justifyContent: "space-around", alignItems: "center" }}>
+              <button className="btn btn-dark" onClick={handleQtyDecrement} >
+                <AiOutlineMinus />
+              </button>
+              <div className="quantity-value ">{product[0].itemQuantity}</div>
+              <button className="btn btn-dark" onClick={handleQtyIncrement} >
+                <AiOutlinePlus />
+              </button>
+            </div>
+            <div>
+              <h4 className="display-6 fw-bold my-4">Price: ${price}</h4>
+            </div>
           </div>
-          <div>
-            <div>
-              <h6>
-                <p style={{ color: "grey" }}>{title}</p>
-              </h6>
-            </div>
-
-            <div style={{ display: "flex", gap: "0.5rem" }}>
-              <div className="quantity-container">
-                <button
-                  className="btn btn-outline-dark me-4"
-                  onClick={handleQtyDecrement}
-                >
-                  <AiOutlineMinus />
-                </button>
-                <div className="quantity-value ">{product[0].itemQuantity}</div>
-                <button
-                  className="btn btn-outline-dark me-4"
-                  onClick={handleQtyIncrement}
-                >
-                  <AiOutlinePlus />
-                </button>
-              </div>
-            </div>
-            <div>
-              <h4 className="display-6 fw-bold my-4">${price}</h4>
-            </div>
+          <div style={{ background: "#344349", padding: "25px", width: "50%", height: "450px", display: "flex", justifyContent: "center" }}>
+            <img src={image} alt={title} width="100%" />
           </div>
         </div>
       </div>
