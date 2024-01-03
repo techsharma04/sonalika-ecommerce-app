@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/sonalika-ecommerce-app/static/css/main.9437cb57.css",
+    "main.js": "/sonalika-ecommerce-app/static/js/main.5e3358dc.js",
+    "static/media/fontawesome-webfont.svg?v=4.7.0": "/sonalika-ecommerce-app/static/media/fontawesome-webfont.c1e38fd9e0e74ba58f7a.svg",
+    "static/media/banner.png": "/sonalika-ecommerce-app/static/media/banner.6d8dc80319d92997c3ff.png",
+    "static/media/fontawesome-webfont.eot": "/sonalika-ecommerce-app/static/media/fontawesome-webfont.8b43027f47b20503057d.eot",
+    "static/media/fontawesome-webfont.ttf?v=4.7.0": "/sonalika-ecommerce-app/static/media/fontawesome-webfont.1e59d2330b4c6deb84b3.ttf",
+    "static/media/fontawesome-webfont.woff?v=4.7.0": "/sonalika-ecommerce-app/static/media/fontawesome-webfont.f691f37e57f04c152e23.woff",
+    "static/media/fontawesome-webfont.woff2?v=4.7.0": "/sonalika-ecommerce-app/static/media/fontawesome-webfont.20fd1704ea223900efa9.woff2",
+    "static/media/navbar.png": "/sonalika-ecommerce-app/static/media/navbar.696e6daa6975cb4a2580.png",
+    "static/media/probar.png": "/sonalika-ecommerce-app/static/media/probar.4cfdc041d659a8a2f5a6.png",
+    "static/media/logo.png": "/sonalika-ecommerce-app/static/media/logo.325a172f02ff163cd745.png",
+    "index.html": "/sonalika-ecommerce-app/index.html",
+    "main.9437cb57.css.map": "/sonalika-ecommerce-app/static/css/main.9437cb57.css.map",
+    "main.5e3358dc.js.map": "/sonalika-ecommerce-app/static/js/main.5e3358dc.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9437cb57.css",
+    "static/js/main.5e3358dc.js"
+  ]
+}
