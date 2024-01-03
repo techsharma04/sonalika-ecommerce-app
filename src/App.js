@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
@@ -16,7 +16,7 @@ import Checkout from "./components/Checkout";
 function App() {
   return (
     <div>
-      <Router>
+      <BrowserRouter basename='/sonalika-ecommerce-app'>
         <Header />
         <Routes>
           <Route exact path="/" element={<Home />} />
@@ -27,12 +27,12 @@ function App() {
           <Route exact path="/cartproduct" element={<CartProducts />} />
           <Route exact path="/checkout" element={<Checkout />} />
           <Route exact path="/wishlist" element={<WishList />} />
-          <Route exact path="/cart" element={<Cart/>}/>  
-          
-            
+          <Route exact path="/cart" element={<Cart />} />
+
+
 
         </Routes>
-      </Router>
+      </BrowserRouter>
     </div>
   );
 }
